@@ -1,0 +1,11 @@
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\bin\Debug\racing_game_smooth_movement.exe.config
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\bin\Debug\racing_game_smooth_movement.exe
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\bin\Debug\racing_game_smooth_movement.pdb
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\obj\Debug\racing_game_smooth_movement.csproj.AssemblyReference.cache
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\obj\Debug\racing_game_smooth_movement.csproj.SuggestedBindingRedirects.cache
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\obj\Debug\racing_game_smooth_movement.Form1.resources
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\obj\Debug\racing_game_smooth_movement.Properties.Resources.resources
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\obj\Debug\racing_game_smooth_movement.csproj.GenerateResource.cache
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\obj\Debug\racing_game_smooth_movement.csproj.CoreCompileInputs.cache
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\obj\Debug\racing_game_smooth_movement.exe
+C:\Users\iljod\Downloads\test\racing_game_smooth_movement\racing_game_smooth_movement\obj\Debug\racing_game_smooth_movement.pdb
