@@ -8,9 +8,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.WebRequestMethods;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+
 
 namespace racing_game_smooth_movement
 {
@@ -31,6 +29,13 @@ namespace racing_game_smooth_movement
     //along with this program.If not, see<https://www.gnu.org/licenses/>.
 
     //You can contact met at my electronic mail at Iljodp@gmail.com
+
+
+
+
+
+    //FOR THIS CODE TO WORK IT IS VERY VERY IMPORTANT TO CHECK THE 'EVENT SECTION IN THE PROPERTIES WINDOW IN THE FORM DESIGN ITSELF
+    //THE 2 FUNCTIONS THAT WE JUST MADE ARE BEING EXECUTED IN THE EVENT SECTION (YELLOW BOLT) IN THE PROPERTIES FROM THE FORM ITSELF, NOT THE CAR
     public partial class Form1 : Form
     {
 
