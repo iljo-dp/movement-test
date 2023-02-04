@@ -4,10 +4,17 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
+//important for using smooth up and down
+//doesn't matter that you know what this is
+using System.Runtime.InteropServices;
+
 
 
 namespace racing_game_smooth_movement
@@ -38,6 +45,16 @@ namespace racing_game_smooth_movement
     //THE 2 FUNCTIONS THAT WE JUST MADE ARE BEING EXECUTED IN THE EVENT SECTION (YELLOW BOLT) IN THE PROPERTIES FROM THE FORM ITSELF, NOT THE CAR
     public partial class Form1 : Form
     {
+        //this part is used to implement the GetAsyncKeyState in the code, which is used for the smooth up and down in this code
+        //The code is a C# declaration for the GetAsyncKeyState function in the "user32.dll" library.
+        //It is decorated with DllImport attribute to indicate that the function is being imported from an external library, in this case, the "user32.dll" library.
+
+        //here it imports a dll
+        [DllImport("user32.dll")]
+
+        //When called, the GetAsyncKeyState function retrieves the state of the specified virtual key.
+        //The return value is a 16-bit signed integer indicating the state of the key. 
+        static extern short GetAsyncKeyState(System.Windows.Forms.Keys vKey);
 
         bool goleft, goright;
         int snelheid = 5;
@@ -86,17 +103,17 @@ namespace racing_game_smooth_movement
                 goright = true;
             }
 
-        //this part of the code isn't repeated anywhere else, but this is the part that makes the car move up or down
-        //this could 100% be changed into also being smooth, but i'il just be releasing a quick build for now
+            //this part of the code isn't repeated anywhere else, but this is the part that makes the car move up or down
+            //this could 100% be changed into also being smooth, but i'il just be releasing a quick build for now
 
-            if (e.KeyCode == Keys.Up && auto.Top > 35)
-            {
-                auto.Top -= snelheid + 1;
-            }
-            else if (e.KeyCode == Keys.Down && auto.Bottom < 700)
-            {
-                auto.Top += snelheid + 1;
-            }
+            //if (e.KeyCode == Keys.Up && auto.Top > 35)
+            //{
+            //    auto.Top -= snelheid + 1;
+            //}
+            //else if (e.KeyCode == Keys.Down && auto.Bottom < 700)
+            //{
+            //    auto.Top += snelheid + 1;
+            //}
         }
 
         //this is the timer of the whole game itself
@@ -108,14 +125,36 @@ namespace racing_game_smooth_movement
             beweegmiddelijn(snelheid);
 
             //this part of the code makes sure that the car acctualy moves when the key is being pressed down
-             if (goleft == true && auto.Left > 10)
-             {
+            if (goleft == true && auto.Left > 10)
+            {
                 auto.Left -= snelheid;
-             }
-             if (goright == true && auto.Left < 415)
-             {
+            }
+            if (goright == true && auto.Left < 415)
+            {
                 auto.Left += snelheid;
-             }            
+            }
+
+            // Calculate smooth movement for the up and down direction.
+            int upandown = snelheid + 1;
+
+            // Store the current position of the car
+            int currentposition = auto.Top;
+
+            // Check if the Up key is pressed and the car is not at the top edge
+            if (GetAsyncKeyState(Keys.Up) != 0 && auto.Top > 35)
+            {
+                // Decrease the targetTop by the speed of movement
+                currentposition -= upandown;
+            }
+            // Check if the Down key is pressed and the car is not at the bottom edge
+            else if (GetAsyncKeyState(Keys.Down) != 0 && auto.Bottom < 700)
+            {
+                // Increase the targetTop by the speed of movement
+                currentposition += upandown;
+            }
+
+            // Update the position of the car using a smooth transition
+            auto.Top = (auto.Top + currentposition) / 2;
         }
 
 
